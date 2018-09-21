@@ -1,0 +1,31 @@
+{
+  "name": "Bart Runner",
+  "short_name": "BartRunner",
+  "icons": [
+      {
+        "src": "/favicon-16x16.png",
+        "type": "image/png",
+        "sizes": "16x16"
+      }, 
+      {
+        "src": "/favicon-32x32.png",
+        "type": "image/png",
+        "sizes": "32x32"
+      }, 
+      {
+        "src": "/android-chrome-192x192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      }, 
+      {
+        "src": "/android-chrome-384x384.png",
+        "type": "image/png",
+        "sizes": "384x384"
+      } 
+      ],
+  "start_url": "/?homescreen=1",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#059cd8",
+  "theme_color": "#059cd8"
+}

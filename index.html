@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang=en-US>
+  <head>
+    <meta charset='utf-8'>
+    <title>BartRunner Web</title>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='description' content='Bart Runner Web - a free real-time Bart web app.'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='canonical' href='https://bartrunner.com/'>
+    <link rel='manifest' href='manifest.json'>
+    <meta name='mobile-web-app-capable' content='yes'>
+    <meta name='apple-mobile-web-app-capable' content='yes'>
+    <meta name='application-name' content='Bart Runner Web'>
+    <meta name='apple-mobile-web-app-status-bar-style' content='black'>
+    <meta name='apple-mobile-web-app-title' content='Bart Runner Web'>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#059cd8">
+    <meta name="theme-color" content="#059cd8">
+
+    <!-- The Open Graph  http://ogp.me/ -->
+    <meta property='og:title' content='Bart Runner Web'>
+    <meta property='og:type' content='website'>
+    <meta property='og:image' content='https://bartrunner.com/images/bartrunner.png'>
+    <meta property='og:url' content='https://bartrunner.com/'>
+    <meta property='og:description' content='Bart Runner Web - a free real-time Bart web app.'>
+
+    <!-- Twitter cards  https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards.html -->
+    <meta name='twitter:card' content='summary'>
+    <meta name='twitter:url' content='https://airhorner.com/'>
+    <meta name='twitter:title' content='Air Horn'>
+    <meta name='twitter:description' content='Bart Runner Web - a free real-time Bart web app.'>
+    <meta name='twitter:image' content='https://bartrunner.com/images/bartrunner.png'>
+    <meta name='twitter:creator' content='@mfreed777'>
+
+    <link rel='stylesheet' href='styles/main.css'>
+    <!--<script src='/scripts/pwacompat.min.js' async></script>-->
+  </head>
+  <body>
+    <div id='container'>
+      <div id='controls'>
+        <select id='from'>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+        </select>
+        <select id='to'>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+        </select>
+      </div>
+      <div id='results'>
+      </div>
+    </div>
+
+
+
+    <div id='installer'>
+      <button class='button'>Install</button>
+    </div>
+    <script src=/scripts/main.min.js></script>
+<!--    <script src=/scripts/comlink.global.js></script> -->
+ <!--   <script src=/scripts/messagechanneladapter.global.js></script> -->
+    <script>
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js', { scope: '/' })
+          .then(function(registration) {
+                console.log('Service Worker Registered');
+          });
+
+        navigator.serviceWorker.ready.then(function(registration) {
+           console.log('Service Worker Ready');
+        });
+      }
+    </script>
+  </body>
+</html>
