@@ -2,7 +2,7 @@
 <html lang=en-US>
   <head>
     <meta charset='utf-8'>
-    <title>BartRunner Web</title>
+    <title>Bart Runner Web</title>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='description' content='Bart Runner Web - a free real-time Bart web app.'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -15,12 +15,12 @@
     <meta name='apple-mobile-web-app-title' content='Bart Runner Web'>
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#059cd8">
-    <meta name="theme-color" content="#059cd8">
+    <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png'>
+    <link rel='icon' type='image/png' sizes='32x32' href='favicon-32x32.png'>
+    <link rel='icon' type='image/png' sizes='16x16' href='favicon-16x16.png'>
+    <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#5bbad5'>
+    <meta name='msapplication-TileColor' content='#059cd8'>
+    <meta name='theme-color' content='#059cd8'>
 
     <!-- The Open Graph  http://ogp.me/ -->
     <meta property='og:title' content='Bart Runner Web'>
@@ -41,20 +41,36 @@
     <!--<script src='/scripts/pwacompat.min.js' async></script>-->
   </head>
   <body>
-    <div id='container'>
-      <div id='controls'>
-        <select id='from'>
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-        </select>
-        <select id='to'>
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-        </select>
+    <div id='bartrunner-container'>
+      <H1 id='title'>Bart Runner Web</H1>
+      <div id='app'>
+        <div id='controls'>
+          <div class='station-select-group'>
+            <label for='from-station' class='station-select-label'>From Station:</label>
+            <select id='from-station' name='from-station'>
+              <option value='INVALID'>Loading stations...</option>
+            </select>
+          </div>
+          <div class='station-select-group'>
+            <label for='to-station' class='station-select-label'>To Station:</label>
+            <select id='to-station' name='to-station'>
+              <option value='INVALID'>Loading stations...</option>
+            </select>
+          </div>
+        </div>
+        <div id='results'>
+          <div class='station-label'>Select a station above to see times...</div>
+          <div class='leavingbox estimate-group'>
+            <label class='estimate-label'>Leave in</label>
+            <span class='estimate-value'>3m 26s</span>
+          </div>
+          <div class='arrivingbox estimate-group'>
+            <label class='estimate-label'>Arrive in</label>
+            <span class='estimate-value'>18m 12s</span>
+          </div>
+        </div>
       </div>
-      <div id='results'>
+      <div id='status'>
       </div>
     </div>
 
@@ -63,7 +79,7 @@
     <div id='installer'>
       <button class='button'>Install</button>
     </div>
-    <script src=/scripts/main.min.js></script>
+    <script src=scripts/main.min.js></script>
 <!--    <script src=/scripts/comlink.global.js></script> -->
  <!--   <script src=/scripts/messagechanneladapter.global.js></script> -->
     <script>
