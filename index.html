@@ -79,19 +79,17 @@
     <div id='installer'>
       <button class='button'>Install</button>
     </div>
+    <script src=scripts/utils.min.js></script>
     <script src=scripts/main.min.js></script>
 <!--    <script src=/scripts/comlink.global.js></script> -->
  <!--   <script src=/scripts/messagechanneladapter.global.js></script> -->
     <script>
       if('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js', { scope: '/' })
-          .then(function(registration) {
-                console.log('Service Worker Registered');
-          });
+          .then(reg => console.log('Service Worker Registered',reg));
 
-        navigator.serviceWorker.ready.then(function(registration) {
-           console.log('Service Worker Ready');
-        });
+        navigator.serviceWorker.ready
+          .then(reg => console.log('Service Worker Ready',reg));
       }
     </script>
   </body>

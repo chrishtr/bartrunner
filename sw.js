@@ -17,9 +17,12 @@
  *
  */
 
+'use strict';
+
 const version = "0.1.1";
 const cacheName = `bartrunner-${version}`;
 self.addEventListener('install', e => {
+  console.log('Installing ' + cacheName + '...');
   e.waitUntil(
     caches.open(cacheName).then(cache => {
       return cache.addAll([
@@ -38,10 +41,12 @@ self.addEventListener('install', e => {
 });
 
 self.addEventListener('activate', event => {
+  console.log('Bartrunner PWA ready to handle things...');
   event.waitUntil(self.clients.claim());
 });
 
 self.addEventListener('fetch', event => {
+  console.log('Bartrunner PWA, fetch for: ' + event.request.url);
   event.respondWith(
     caches.open(cacheName)
       .then(cache => cache.match(event.request, {ignoreSearch: true}))
