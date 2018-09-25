@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang=en-US>
+  <head>
+    <meta charset='utf-8'>
+    <title>Bart Runner Web - Add Route</title>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='description' content='Bart Runner Web - Details Screen'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='styles/main.css'>
+  </head>
+  <body>
+    <div id='bartrunner-add-route-container'>
+      <div id='outer-app'>
+        <H1 id='title'>Add a route</H1>
+        <div id='app'>
+          <div id='controls'>
+            <div class='station-select-label'>Origin:</div>
+            <select id='from-station' name='from-station'>
+              <option value='INVALID'>Loading stations...</option>
+            </select>
+            <div class='station-select-label'>Destination:</div>
+            <select id='to-station' name='to-station'>
+              <option value='INVALID'>Loading stations...</option>
+            </select>
+          </div>
+        </div>
+        <div id='status'></div>
+      </div>
+    </div>
+    <script src=scripts/utils.min.js></script>
+    <script src=scripts/add_route.min.js></script>
+  </body>
+</html>

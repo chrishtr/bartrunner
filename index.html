@@ -41,48 +41,29 @@
     <!--<script src='/scripts/pwacompat.min.js' async></script>-->
   </head>
   <body>
-    <div id='bartrunner-container'>
-      <H1 id='title'>Bart Runner Web</H1>
+    <div id='bartrunner-favorites-container'>
+      <div id='top-controls'>
+        <H1 id='title'>Favorite Routes</H1>
+        <a href="add_route_screen.html" id='add-route-link'>+</a>
+      </div>
       <div id='app'>
-        <div id='controls'>
-          <div class='station-select-group'>
-            <label for='from-station' class='station-select-label'>From Station:</label>
-            <select id='from-station' name='from-station'>
-              <option value='INVALID'>Loading stations...</option>
-            </select>
-          </div>
-          <div class='station-select-group'>
-            <label for='to-station' class='station-select-label'>To Station:</label>
-            <select id='to-station' name='to-station'>
-              <option value='INVALID'>Loading stations...</option>
-            </select>
-          </div>
-        </div>
         <div id='results'>
-          <div class='station-label'>Select a station above to see times...</div>
-          <div class='leavingbox estimate-group'>
-            <label class='estimate-label'>Leave in</label>
-            <span class='estimate-value'>3m 26s</span>
-          </div>
-          <div class='arrivingbox estimate-group'>
-            <label class='estimate-label'>Arrive in</label>
-            <span class='estimate-value'>18m 12s</span>
+          <img src="images/favorites_grid.svg">
+          <div class='route-label'>No favorite routes have been added yet</div>
+          <div class='favorites-estimate-group'>
+            <span class='time-estimate'>8m, 42s</span>
+            <span class='other-estimates'>Dep 9:44</span>
           </div>
         </div>
       </div>
-      <div id='status'>
-      </div>
+      <div id='status'></div>
     </div>
-
-
 
     <div id='installer'>
       <button class='button'>Install</button>
     </div>
     <script src=scripts/utils.min.js></script>
-    <script src=scripts/main.min.js></script>
-<!--    <script src=/scripts/comlink.global.js></script> -->
- <!--   <script src=/scripts/messagechanneladapter.global.js></script> -->
+    <script src=scripts/favorites.min.js></script>
     <script>
       if('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js', { scope: '/' })

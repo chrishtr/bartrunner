@@ -16,106 +16,163 @@
  *  limitations under the License
  *
  */
-body {
-    margin: 0;
-    background-color: #059cd8
-}
 * {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none
 }
-main {
-    padding: 20px
+html {
+    height: 100%;
 }
-html,
 body
 {
-     height: 100%;
-}
-
-
-/* Overall container */
-#bartrunner-container {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-
+    min-height: 100%;
+    background-color: #222222;
+/*    background-color: #059cd8*/
     font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
     font-weight: lighter;
     line-height: 1;
-    color: #000000;
+    color: #ffffff;
     margin: 0;
     text-align: left;
 }
 
+/*=============================================
+  OVERALL settings
+  =============================================*/
+
 /* App title */
 #title {
+    text-align: left;
     font-size: 30px;
     line-height: 1.5;
     margin: 25px 10px 10px 10px;
-    text-align: center;
 }
 
 /* The app itself */
 #app {
-    background-color: white;
+/*    background-color: white;*/
     padding: 20px;
 }
-
-/* Station selection controls */
-#controls {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-/* Single group of label/station selector */
-.station-select-group {
-    text-align: left;
-    display: inline-block;
-    margin: 1em;
-}
-
-.station-select-label {
-    display: block;
-    font-size: 14px;
-}
-
-/* GRID BELOW */
-#results {
-    display: grid;
-    grid-template-columns: auto 25% 25%;
-    grid-template-rows: auto;
-    grid-row-gap: 10px;
-}
-
-.station-label {
-    /*display: block;*/
-    font-size: 18px;
-    font-weight: bolder;
-}
-.estimate-group {
-}
-.estimate-label {
+.time-estimate {
     font-size: 12px;
     display: block;
 }
-.estimate-value {
+.other-estimates {
     font-weight: bolder;
     font-size: 26px;
-    color: red;
+    color: white;
 }
-
-
 /* Status bar */
 #status {
     font-size: 10px;
 }
 
+
+/*=============================================
+  FAVORITES settings
+  =============================================*/
+/* Overall details container */
+#bartrunner-favorites-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+#bartrunner-favorites-container #top-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#add-route-link {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+#bartrunner-favorites-container #results {
+    display: grid;
+    grid-template-columns: auto auto; /* 2 columns */
+    grid-template-rows: auto;
+    grid-row-gap: 10px;
+}
+/* Single group of time estimate info */
+.favorites-estimate-group {
+    text-align: left;
+    display: inline-block;
+    margin: 1em;
+}
+
+/*=============================================
+  DETAILS settings
+  =============================================*/
+
+/* Overall details container */
+#bartrunner-details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+/* GRID BELOW */
+#details-results {
+    display: grid;
+    grid-template-columns: auto 25% 25%;
+    grid-template-rows: auto;
+    grid-row-gap: 10px;
+}
+.station-label {
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+
+/*=============================================
+  ADD ROUTE settings
+  =============================================*/
+
+#bartrunner-add-route-container {
+    background-color: #666666;
+    display: inline-block;
+}
+
+#bartrunner-add-route-container #outer-app {
+    margin: 0 auto;
+    text-align: center;
+    HOW TO CENTER THIS?? VERTICALLY AND HORIZONTALLY? Maybe flexbox??
+}
+
+/* Station selection controls */
+#bartrunner-add-route-container #controls {
+    display: grid;
+    grid-template-columns: min-content min-content;
+    grid-template-rows: auto;
+    grid-row-gap: 10px;
+    grid-column-gap: 50px;
+/*
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;*/
+}
+
+/* Single group of label/station selector */
+/*.station-select-group {
+    text-align: left;
+    display: inline-block;
+    margin: 1em;
+}*/
+
+.station-select-label {
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+
+/*=============================================
+  INSTALLER settings
+  =============================================*/
 
 #installer {
     position: absolute;

@@ -3,7 +3,5 @@
 cd ~/bart
 #~/s3cmd/s3cmd sync -r ~/bart s3://bartrunner.com
 
-#~/s3cmd/s3cmd sync index.html sw.js images/bartrunner.png images/ic_launcher-web-cropped.png scripts/main.min.js scripts/utils.min.js styles/main.css manifest.json LICENSE robots.txt browserconfig.xml favicon.ico favicon-16x16.png favicon-32x32.png apple-touch-icon.png safari-pinned-tab.svg android-chrome-384x384.png android-chrome-192x192.png mstile-150x150.png s3://bartrunner.com
-
 ~/s3cmd/s3cmd sync images scripts styles index.html sw.js manifest.json LICENSE robots.txt browserconfig.xml favicon.ico favicon-16x16.png favicon-32x32.png apple-touch-icon.png safari-pinned-tab.svg android-chrome-384x384.png android-chrome-192x192.png mstile-150x150.png s3://bartrunner.com
 

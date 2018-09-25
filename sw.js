@@ -19,7 +19,7 @@
 
 'use strict';
 
-const version = "0.1.2";
+const version = "0.1.3";
 const cacheName = `bartrunner-${version}`;
 self.addEventListener('install', e => {
   console.log('Installing ' + cacheName + '...');
@@ -28,12 +28,13 @@ self.addEventListener('install', e => {
       return cache.addAll([
         `/`,
         `/index.html`,
+        `/details_screen.html`,
+        `/add_route_screen.html`,
         `/styles/main.css`,
-        `/scripts/main.min.js`,
-//        `/scripts/comlink.global.js`,
-//        `/scripts/messagechanneladapter.global.js`,
-//        `/scripts/pwacompat.min.js`,
-//        `/sounds/airhorn.mp3`
+        `/scripts/favorites.min.js`,
+        `/scripts/details.min.js`,
+        `/scripts/add_route.min.js`,
+        `/scripts/utils.min.js`,
       ])
           .then(() => self.skipWaiting());
     })
