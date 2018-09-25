@@ -41,22 +41,24 @@
     <!--<script src='/scripts/pwacompat.min.js' async></script>-->
   </head>
   <body>
-    <div id='bartrunner-favorites-container'>
-      <div id='top-controls'>
-        <H1 id='title'>Favorite Routes</H1>
-        <a href="add_route_screen.html" id='add-route-link'>+</a>
-      </div>
-      <div id='app'>
-        <div id='results'>
-          <img src="images/favorites_grid.svg">
-          <div class='route-label'>No favorite routes have been added yet</div>
-          <div class='favorites-estimate-group'>
-            <span class='time-estimate'>8m, 42s</span>
-            <span class='other-estimates'>Dep 9:44</span>
+    <div class='outer-app'>
+      <div id='main-app-favorites' class='app'>
+        <div class='top-controls'>
+          <H1 class='title'>Favorite Routes</H1>
+          <a href="add_route.html" id='add-route-link'>+</a>
+        </div>
+        <div class='inner-app'>
+          <div id='favorites-results'>
+            <object class="favorites-grid-icon" type="image/svg+xml" data="images/favorites_grid.svg"></object>
+            <div class='route-label'>No favorite routes have been added yet</div>
+            <div class='favorites-estimate-group'>
+              <span class='time-estimate'>8m, 42s</span>
+              <span class='other-estimates'>Dep 9:44</span>
+            </div>
           </div>
         </div>
+        <div id='status'></div>
       </div>
-      <div id='status'></div>
     </div>
 
     <div id='installer'>

@@ -7,24 +7,34 @@
     <meta name='description' content='Bart Runner Web - Details Screen'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' href='styles/main.css'>
+
+    <!-- Favicon -->
+    <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png'>
+    <link rel='icon' type='image/png' sizes='32x32' href='favicon-32x32.png'>
+    <link rel='icon' type='image/png' sizes='16x16' href='favicon-16x16.png'>
+    <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#5bbad5'>
+    <meta name='msapplication-TileColor' content='#059cd8'>
+    <meta name='theme-color' content='#059cd8'>
   </head>
   <body>
-    <div id='bartrunner-details-container'>
-      <H1 id='title'>Departures</H1>
-      <div id='app'>
-        <div id='details-results'>
-          <div class='station-label'>Select a station above to see times...</div>
-          <div class='leavingbox estimate-group'>
-            <label class='estimate-label'>Leave in</label>
-            <span class='estimate-value'>3m 26s</span>
-          </div>
-          <div class='arrivingbox estimate-group'>
-            <label class='estimate-label'>Arrive in</label>
-            <span class='estimate-value'>18m 12s</span>
+    <div class='outer-app'>
+      <div id='main-app-details' class='app'>
+        <H1 class='title'>Departures</H1>
+        <div class='inner-app'>
+          <div id='details-results'>
+            <div class='station-label'>Select a station above to see times...</div>
+            <div class='leavingbox estimate-group'>
+              <label class='estimate-label'>Leave in</label>
+              <span class='estimate-value'>3m 26s</span>
+            </div>
+            <div class='arrivingbox estimate-group'>
+              <label class='estimate-label'>Arrive in</label>
+              <span class='estimate-value'>18m 12s</span>
+            </div>
           </div>
         </div>
+        <div id='status'></div>
       </div>
-      <div id='status'></div>
     </div>
     <script src=scripts/utils.min.js></script>
     <script src=scripts/details.min.js></script>

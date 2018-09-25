@@ -7,13 +7,21 @@
     <meta name='description' content='Bart Runner Web - Details Screen'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' href='styles/main.css'>
+
+    <!-- Favicon -->
+    <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png'>
+    <link rel='icon' type='image/png' sizes='32x32' href='favicon-32x32.png'>
+    <link rel='icon' type='image/png' sizes='16x16' href='favicon-16x16.png'>
+    <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#5bbad5'>
+    <meta name='msapplication-TileColor' content='#059cd8'>
+    <meta name='theme-color' content='#059cd8'>
   </head>
   <body>
-    <div id='bartrunner-add-route-container'>
-      <div id='outer-app'>
-        <H1 id='title'>Add a route</H1>
-        <div id='app'>
-          <div id='controls'>
+    <div class='outer-app'>
+      <div id='main-app-add-route' class='app'>
+        <H1 class='title'>Add a route</H1>
+        <div class='inner-app'>
+          <div id='add-route-controls'>
             <div class='station-select-label'>Origin:</div>
             <select id='from-station' name='from-station'>
               <option value='INVALID'>Loading stations...</option>

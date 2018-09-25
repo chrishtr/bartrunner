@@ -23,11 +23,13 @@
     user-select: none
 }
 html {
+    /*min-height: 100vh;*/
     height: 100%;
 }
 body
 {
-    min-height: 100%;
+    /*min-height: 100vh;*/
+    height: 100vh;
     background-color: #222222;
 /*    background-color: #059cd8*/
     font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
@@ -43,47 +45,70 @@ body
   =============================================*/
 
 /* App title */
-#title {
+.title {
     text-align: left;
     font-size: 30px;
     line-height: 1.5;
     margin: 25px 10px 10px 10px;
 }
-
-/* The app itself */
-#app {
-/*    background-color: white;*/
+.outer-app {
+    /* The outer box - to center the app */
+    display: Flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    min-height: 100vh;
+    position: relative;
+    top: -20vh;
+}
+.app {
+    /* The overall box around everything */
     padding: 20px;
+    display: inline-block;
+}
+.inner-app {
+    /* The inner box around the main working bit */
+    padding: 20px;
+    background-color: #444444;
+}
+.top-controls {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.route-label {
+    font-weight: bolder;
+    font-size: 20px;
 }
 .time-estimate {
-    font-size: 12px;
+    font-weight: bolder;
+    font-size: 20px;
     display: block;
 }
 .other-estimates {
     font-weight: bolder;
-    font-size: 26px;
+    font-size: 16px;
     color: white;
 }
 /* Status bar */
 #status {
     font-size: 10px;
 }
-
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
 
 /*=============================================
   FAVORITES settings
   =============================================*/
 /* Overall details container */
-#bartrunner-favorites-container {
+#main-app-favorites {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-}
-#bartrunner-favorites-container #top-controls {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
 }
 #add-route-link {
@@ -91,11 +116,14 @@ body
     font-weight: bold;
     text-align: center;
 }
-#bartrunner-favorites-container #results {
+#favorites-results {
     display: grid;
-    grid-template-columns: auto auto; /* 2 columns */
+    grid-template-columns: auto auto auto; /* 2 columns */
     grid-template-rows: auto;
     grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    justify-items: start; /* left-align each cell */
+    align-items: center;  /* vertically-center each cell */
 }
 /* Single group of time estimate info */
 .favorites-estimate-group {
@@ -103,13 +131,16 @@ body
     display: inline-block;
     margin: 1em;
 }
+.favorites-grid-icon {
+    height: 2em;
+}
 
 /*=============================================
   DETAILS settings
   =============================================*/
 
 /* Overall details container */
-#bartrunner-details-container {
+#main-app-details {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -133,19 +164,8 @@ body
   ADD ROUTE settings
   =============================================*/
 
-#bartrunner-add-route-container {
-    background-color: #666666;
-    display: inline-block;
-}
-
-#bartrunner-add-route-container #outer-app {
-    margin: 0 auto;
-    text-align: center;
-    HOW TO CENTER THIS?? VERTICALLY AND HORIZONTALLY? Maybe flexbox??
-}
-
 /* Station selection controls */
-#bartrunner-add-route-container #controls {
+#add-route-controls {
     display: grid;
     grid-template-columns: min-content min-content;
     grid-template-rows: auto;
