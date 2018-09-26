@@ -21,15 +21,21 @@
       <div id='main-app-add-route' class='app'>
         <H1 class='title'>Add a route</H1>
         <div class='inner-app'>
-          <div id='add-route-controls'>
-            <div class='station-select-label'>Origin:</div>
-            <select id='from-station' name='from-station'>
-              <option value='INVALID'>Loading stations...</option>
-            </select>
-            <div class='station-select-label'>Destination:</div>
-            <select id='to-station' name='to-station'>
-              <option value='INVALID'>Loading stations...</option>
-            </select>
+          <div id='overall-form'>
+            <div id='station-selectors'>
+              <div class='station-select-label'>Origin:</div>
+              <select id='from-station' name='from-station'>
+                <option value='INVALID'>Loading stations...</option>
+              </select>
+              <div class='station-select-label'>Destination:</div>
+              <select id='to-station' name='to-station'>
+                <option value='INVALID'>Loading stations...</option>
+              </select>
+            </div>
+            <div id='button-group'>
+              <a id="cancel-button" class="ok-cancel-buttons" onclick="">CANCEL</a>
+              <a id="ok-button" class="ok-cancel-buttons" href="">OK</a>
+            </div>
           </div>
         </div>
         <div id='status'></div>

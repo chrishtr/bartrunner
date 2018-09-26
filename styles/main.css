@@ -81,6 +81,7 @@ body
 .route-label {
     font-weight: bolder;
     font-size: 20px;
+    min-width: 200px;
 }
 .time-estimate {
     font-weight: bolder;
@@ -145,7 +146,6 @@ a {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-
 }
 /* GRID BELOW */
 #details-results {
@@ -164,19 +164,34 @@ a {
   ADD ROUTE settings
   =============================================*/
 
-/* Station selection controls */
-#add-route-controls {
+/* Station selection grid */
+#station-selectors {
     display: grid;
     grid-template-columns: min-content min-content;
     grid-template-rows: auto;
-    grid-row-gap: 10px;
+    grid-row-gap: 20px;
     grid-column-gap: 50px;
-/*
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;*/
 }
 
+#overall-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+#button-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+.ok-cancel-buttons {
+    color: cyan;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 30px 10px 10px 10px;
+}
 /* Single group of label/station selector */
 /*.station-select-group {
     text-align: left;
