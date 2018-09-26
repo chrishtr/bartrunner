@@ -3,5 +3,29 @@
 cd ~/bart
 #~/s3cmd/s3cmd sync -r ~/bart s3://bartrunner.com
 
-~/s3cmd/s3cmd sync images scripts styles index.html sw.js manifest.json LICENSE robots.txt browserconfig.xml favicon.ico favicon-16x16.png favicon-32x32.png apple-touch-icon.png safari-pinned-tab.svg android-chrome-384x384.png android-chrome-192x192.png mstile-150x150.png s3://bartrunner.com
+#~/s3cmd/s3cmd sync images scripts styles index.html sw.js manifest.json LICENSE robots.txt browserconfig.xml favicon.ico favicon-16x16.png favicon-32x32.png apple-touch-icon.png safari-pinned-tab.svg android-chrome-384x384.png android-chrome-192x192.png mstile-150x150.png s3://bartrunner.com
 
+read -d '' filelist << EOF
+images
+scripts
+styles
+index.html
+details.html
+add_route.html
+sw.js
+manifest.json
+LICENSE
+robots.txt
+browserconfig.xml
+favicon.ico
+favicon-16x16.png
+favicon-32x32.png
+apple-touch-icon.png
+safari-pinned-tab.svg
+android-chrome-384x384.png
+android-chrome-192x192.png
+mstile-150x150.png
+EOF
+filelist=`echo $filelist`
+
+~/s3cmd/s3cmd sync $filelist s3://bartrunner.com
